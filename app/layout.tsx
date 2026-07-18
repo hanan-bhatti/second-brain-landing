@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://second-brain-landing-page.vercel.app'),
+  metadataBase: new URL('https://second-brain.hanan-bhatti.site'),
   title: 'Second Brain - Universal Capture App',
   description: 'A minimalist, offline-first Android app for capturing links, notes, images, voice memos, and code snippets. Powered by Gemini AI for intelligent OCR and text extraction.',
   keywords: ['capture', 'notes', 'android', 'open-source', 'knowledge-base', 'OCR', 'Gemini AI', 'Jetpack Compose', 'Kotlin'],

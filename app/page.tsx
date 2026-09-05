@@ -10,6 +10,7 @@ import TechStack from '@/components/sections/TechStack'
 import ScreensGallery from '@/components/sections/ScreensGallery'
 import OpenSource from '@/components/sections/OpenSource'
 import Footer from '@/components/sections/Footer'
+import { MotionPage } from '@/components/MotionPage'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -33,6 +34,7 @@ export default function Home() {
   }, [])
 
   return (
+    <MotionPage>
     <main className="min-h-screen overflow-x-clip bg-[var(--color-cream-paper)] text-[var(--color-charcoal)] selection:bg-[var(--color-marker-orange)] selection:text-white">
       <Hero />
       <FeatureShowcase />
@@ -41,5 +43,6 @@ export default function Home() {
       <OpenSource />
       <Footer />
     </main>
+    </MotionPage>
   )
 }

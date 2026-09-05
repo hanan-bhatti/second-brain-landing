@@ -10,6 +10,7 @@ export function MotionPage({ children }: { children: React.ReactNode }) {
   const root = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
+    const eventCleanups: Array<() => void> = []
     const context = gsap.context(() => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
       if (reduceMotion) {
@@ -59,14 +60,17 @@ export function MotionPage({ children }: { children: React.ReactNode }) {
         const onLeave = () => gsap.to(element, { rotateX: 0, rotateY: 0, duration: 0.6, ease: "power3.out" })
         element.addEventListener("mousemove", onMove)
         element.addEventListener("mouseleave", onLeave)
-        context.add(() => {
+        eventCleanups.push(() => {
           element.removeEventListener("mousemove", onMove)
           element.removeEventListener("mouseleave", onLeave)
         })
       })
     }, root)
 
-    return () => context.revert()
+    return () => {
+      eventCleanups.forEach((cleanup) => cleanup())
+      context.revert()
+    }
   }, [])
 
   return <div ref={root}>{children}</div>

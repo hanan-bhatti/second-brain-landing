@@ -4,63 +4,27 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://second-brain.hanan-bhatti.site'),
-  title: 'Second Brain - Universal Capture App',
-  description: 'A minimalist, offline-first Android app for capturing links, notes, images, voice memos, and code snippets. Powered by Gemini AI for intelligent OCR and text extraction.',
-  keywords: ['capture', 'notes', 'android', 'open-source', 'knowledge-base', 'OCR', 'Gemini AI', 'Jetpack Compose', 'Kotlin'],
+  title: 'Second Brain — Capture what matters',
+  description: 'An open-source, offline-first Android knowledge archive for capturing links, notes, images, code, and voice memos.',
+  keywords: ['Android', 'offline-first', 'knowledge archive', 'open source', 'OCR', 'voice memos', 'Firebase'],
   generator: 'v0.app',
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
+  icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
   manifest: '/site.webmanifest',
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Second Brain - Universal Capture App',
-    description: 'A minimalist, offline-first Android app for capturing links, notes, images, voice memos, and code snippets. Powered by Gemini AI for intelligent OCR and text extraction.',
+    title: 'Second Brain — Capture what matters',
+    description: 'An open-source, offline-first Android knowledge archive for capturing links, notes, images, code, and voice memos.',
     type: 'website',
-    url: 'https://github.com/hanan-bhatti/second-brain',
+    url: 'https://second-brain.hanan-bhatti.site',
     siteName: 'Second Brain',
-    images: [
-      {
-        url: '/second-brain-og-1200x630.png',
-        width: 1200,
-        height: 630,
-        alt: 'Second Brain App Dashboard and System Overlay Interface',
-      },
-    ],
+    images: [{ url: '/second-brain-og-1200x630.png', width: 1200, height: 630, alt: 'Second Brain Android knowledge archive' }],
     locale: 'en_US',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Second Brain - Universal Capture App',
-    description: 'A minimalist, offline-first Android app for capturing links, notes, images, voice memos, and code snippets.',
-    images: ['/second-brain-og-1200x630.png'],
-  },
+  twitter: { card: 'summary_large_image', title: 'Second Brain — Capture what matters', description: 'An open-source, offline-first Android knowledge archive.', images: ['/second-brain-og-1200x630.png'] },
 }
 
-export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fdfbf9' },
-  ],
-  width: 'device-width',
-  initialScale: 1,
-}
+export const viewport: Viewport = { colorScheme: 'light', themeColor: '#fdfbf9', width: 'device-width', initialScale: 1 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
-      </body>
-    </html>
-  )
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body className="antialiased">{children}{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
 }

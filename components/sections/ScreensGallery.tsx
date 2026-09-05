@@ -50,7 +50,7 @@ const appScreens: AppScreen[] = [
   {
     title: 'OCR Area Selection',
     filename: '/ocr_target_screenshot.png',
-    description: 'Before triggering on-device OCR, the screen capture service overlays a handle so the user can easily select the target text or area on their device.',
+    description: 'Before triggering OCR, the screen capture service overlays a handle so the user can select the target text or area on their device.',
     category: 'ocr',
     color: 'var(--color-sprout-sticker)',
     colSpanClass: 'md:col-span-1',
@@ -68,7 +68,7 @@ const appScreens: AppScreen[] = [
   {
     title: 'Voice Transcription',
     filename: '/voice_memo_transcription.png',
-    description: 'Once recorded, the memo is transcribed locally. The app includes a rich text viewer with a markdown preview tab, displaying the generated text formatted in structured headers and bullet points.',
+    description: 'Once recorded, the memo can be transcribed and reviewed in a rich text viewer with a Markdown preview tab, displaying generated text in structured headers and bullet points.',
     category: 'voice',
     color: 'var(--color-marker-orange)',
     colSpanClass: 'md:col-span-2',
